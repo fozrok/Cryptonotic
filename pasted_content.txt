@@ -1,0 +1,137 @@
+Interactive Crypto Training Series Creation
+
+Objective:
+Convert each of the 4 attached BAE Ascend documents into separate, engaging interactive web training modules, complete with visual illustrations and consistent brand styling.
+
+🧾 Source Materials
+
+Use these uploaded documents as the foundation for your training content:
+
+Risk_Management_Essentials.docx
+
+Crypto_Trading_Terminology.docx
+
+Candlestick_Patterns_Explained.docx
+
+Chart_Patterns_for_Beginners.docx
+
+🎨 Visual & Brand Guidelines
+
+Use the branding style and color palette shown in the uploaded screenshot (272f444a-155d-43a6-96d9-7287c0728201.png) throughout the web training modules. This includes:
+
+Primary Colors: Extract dominant brand hex values from the screenshot (e.g., purples, golds, neutrals)
+
+Typography: Match font families and heading hierarchies shown in the UI
+
+UI Components: Reflect the clean, modern, minimal look (e.g., cards, icon-accompanied titles, light backgrounds, curved edges)
+
+Buttons, Checklists, and Progress Bars should align stylistically with the screenshot aesthetic.
+
+🧠 Structure of Each Web Training Module
+
+For each of the 4 documents, structure the interactive training document using the following format:
+
+1. Intro Section
+
+Title + Subtitle
+
+Motivational welcome paragraph (tone: supportive, empowering, practical)
+
+“What You’ll Learn” bullets (from the guide’s learning outcomes)
+
+2. Interactive Sections per Chapter
+
+For each chapter or major section:
+
+Heading (consistent with the doc’s section titles)
+
+Summary of Key Ideas (distilled into plain language)
+
+Illustration: Generate or suggest an image to visually explain the concept (e.g., charts, metaphors, characters, diagrams)
+
+Mini Quiz (optional): Add 1–2 simple multiple-choice or true/false questions to reinforce retention
+
+Checklist / Key Takeaway Card (summarize the section)
+
+3. Frameworks / Decision Tools
+
+Where frameworks are present (e.g. stop loss rules, position sizing formulas, risk planning steps):
+
+Rebuild as interactive calculators, drag-and-drop cards, or visual flows (use modern UI design)
+
+4. Quick Reference Sections
+
+Include summary tables, quick-glance guides, and visual decision trees extracted from the source material. Make this a collapsible section.
+
+5. Practice & Application
+
+Add interactive chart annotation exercises (for patterns/technical sections)
+
+Include journaling prompts (especially for risk/emotional management)
+
+“Plan Your Trade” template that users can fill in
+
+6. Next Steps
+
+Personalized action plan based on that module (tie into BAE ecosystem)
+
+Button: “Mark as Complete”
+
+Button: “Go to Next Module”
+
+📌 Special Notes per Document
+A. Risk_Management_Essentials
+
+Focus on emotional regulation, family-safe investing, capital allocation, and stop-loss logic.
+
+Include "Create Your Risk Plan" form users can complete digitally.
+
+Visuals: Risk pyramid, traffic light investing, stop-loss zones, family-safe crypto checklist.
+
+B. Crypto_Trading_Terminology
+
+Convert glossary into searchable glossary UI with hover definitions.
+
+Use icons and examples to visualize terms (e.g., bulls/bears, candles, whales, FUD).
+
+Add a progress bar to track how many terms have been learned.
+
+C. Candlestick_Patterns_Explained
+
+Include interactive flashcards with “Reveal” behavior for each pattern.
+
+Each pattern should include:
+
+Diagram
+
+What it means
+
+When it appears
+
+How to trade it
+
+Add real chart image samples for practice.
+
+D. Chart_Patterns_for_Beginners
+
+Focus on interactive animations to explain pattern shapes (head & shoulders, triangles, rectangles).
+
+Include “Draw It Yourself” sketch canvas or simulated pattern-building.
+
+Allow toggling between bullish/bearish examples with different chart overlays.
+
+🧬 Tone & Audience Fit
+
+Voice: Supportive, encouraging, and simple — for busy mums entering crypto
+
+Readability: Assume minimal prior technical knowledge
+
+Emotion: Empower through clarity, safety, and practical confidence
+
+🔄 Output Format
+
+Export as individual web modules or structured HTML/React files
+
+Each module should be self-contained but thematically consistent
+
+All assets (images, illustrations, UI blocks) should use the branding visual cues
