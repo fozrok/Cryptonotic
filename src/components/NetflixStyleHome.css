@@ -41,6 +41,10 @@
   gap: 15px;
 }
 
+.logo.zionix-mode {
+  gap: 0;
+}
+
 .header-logo {
   width: 40px;
   height: 40px;
@@ -48,10 +52,30 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
+.logo.zionix-mode .header-logo {
+  width: 120px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.clickable-logo {
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.clickable-logo:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.clickable-logo:active {
+  transform: scale(0.95);
+}
+
 .logo h1 {
   font-size: 1.8rem;
   font-weight: 700;
-  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  background: var(--text-gradient, linear-gradient(45deg, #ff6b6b, #feca57));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -76,7 +100,7 @@
 }
 
 .nav-item.active {
-  background: linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57);
+  background: var(--gradient, linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57));
   color: white;
 }
 
@@ -86,7 +110,7 @@
 }
 
 .motivation-banner {
-  background: linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57);
+  background: var(--gradient, linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57));
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -148,19 +172,31 @@
 }
 
 .sidebar-nav .nav-item.active {
-  background: linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57);
+  background: var(--gradient, linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57));
   color: white;
 }
 
 .nav-icon {
   font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.nav-icon-image {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  border-radius: 4px;
 }
 
 .motivation-card {
-  background: linear-gradient(135deg, rgba(254, 202, 87, 0.1) 0%, rgba(255, 107, 107, 0.1) 100%);
+  background: linear-gradient(135deg, var(--primary-color-rgba, rgba(254, 202, 87, 0.1)) 0%, var(--secondary-color-rgba, rgba(255, 107, 107, 0.1)) 100%);
   border-radius: 15px;
   padding: 25px;
-  border: 1px solid rgba(254, 202, 87, 0.3);
+  border: 1px solid var(--primary-color-rgba, rgba(254, 202, 87, 0.3));
   text-align: center;
 }
 
@@ -183,7 +219,7 @@
 }
 
 .motivation-btn {
-  background: linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57);
+  background: var(--gradient, linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57));
   border: none;
   padding: 10px 20px;
   border-radius: 20px;
@@ -219,7 +255,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 10px;
-  background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3);
+  background: var(--text-gradient, linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -313,7 +349,7 @@
 }
 
 .play-button {
-  background: linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57);
+  background: var(--gradient, linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57));
   border: none;
   width: 60px;
   height: 60px;
@@ -334,7 +370,7 @@
 
 .card-badge {
   display: inline-block;
-  background: linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57);
+  background: var(--gradient, linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57));
   color: white;
   padding: 4px 12px;
   border-radius: 12px;
@@ -468,7 +504,7 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57);
+  background: var(--gradient, linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57));
   border-radius: 3px;
   transition: width 0.3s ease;
 }

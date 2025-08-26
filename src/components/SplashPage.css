@@ -94,6 +94,14 @@
   transform: translateY(0);
 }
 
+.logo-container.zionix-mode {
+  margin-bottom: 60px;
+}
+
+.logo-container.zionix-mode .logo-icon {
+  margin-bottom: 0;
+}
+
 .logo-icon {
   margin-bottom: 20px;
   animation: pulse 2s ease-in-out infinite;
@@ -107,6 +115,26 @@
   height: 120px;
   object-fit: contain;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.logo-container.zionix-mode .bib-logo {
+  width: 200px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.clickable-logo {
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.clickable-logo:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.clickable-logo:active {
+  transform: scale(0.95);
 }
 
 @keyframes pulse {
@@ -183,7 +211,7 @@
 
 .continue-button {
   position: relative;
-  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  background: var(--gradient, linear-gradient(45deg, #ff6b6b, #feca57));
   border: none;
   padding: 15px 40px;
   font-size: 1.2rem;

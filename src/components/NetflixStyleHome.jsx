@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react'
+import { useLogoContext } from '../context/LogoContext'
 import './NetflixStyleHome.css'
 
-const NetflixStyleHome = ({ modules, onModuleSelect }) => {
+const NetflixStyleHome = ({ modules, onModuleSelect, currentSection, onSectionChange }) => {
   const [selectedModule, setSelectedModule] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [activeCategory, setActiveCategory] = useState('all')
+  const { currentLogo, logoAlt, showText, isZionixMode, colorScheme, toggleLogo } = useLogoContext()
 
   useEffect(() => {
     setIsLoaded(true)
   }, [])
+
+  useEffect(() => {
+    setActiveCategory('all')
+  }, [currentSection])
 
   const handleModuleHover = (moduleId) => {
     setSelectedModule(moduleId)
@@ -27,32 +33,50 @@ const NetflixStyleHome = ({ modules, onModuleSelect }) => {
   }
 
   const getFilteredModules = () => {
-    switch (activeCategory) {
-      case 'risk':
-        return modules.filter(module => module.id === 'risk')
-      case 'technical':
-        return modules.filter(module => ['candlestick', 'chart'].includes(module.id))
-      case 'strategy':
-        return modules.filter(module => ['terminology'].includes(module.id))
-      default:
-        return modules
+    if (currentSection === 'crypto') {
+      switch (activeCategory) {
+        case 'risk':
+          return modules.filter(module => module.id === 'risk')
+        case 'technical':
+          return modules.filter(module => ['candlestick', 'chart'].includes(module.id))
+        case 'strategy':
+          return modules.filter(module => ['terminology'].includes(module.id))
+        default:
+          return modules
+      }
+    } else {
+      // For booknotic modules, all categories show all modules
+      return modules
     }
   }
 
   const filteredModules = getFilteredModules()
 
   return (
-    <div className={`netflix-home ${isLoaded ? 'loaded' : ''}`}>
+    <div 
+      className={`netflix-home ${isLoaded ? 'loaded' : ''}`}
+      style={{
+        '--primary-color': colorScheme.primary,
+        '--secondary-color': colorScheme.secondary,
+        '--gradient': colorScheme.gradient,
+        '--text-gradient': colorScheme.textGradient,
+        '--primary-color-rgba': colorScheme.primaryRgba,
+        '--secondary-color-rgba': colorScheme.secondaryRgba,
+        '--primary-color-rgba-border': colorScheme.primaryRgbaBorder
+      }}
+    >
       {/* Header */}
       <header className="netflix-header">
         <div className="header-content">
-          <div className="logo">
+          <div className={`logo ${isZionixMode ? 'zionix-mode' : ''}`}>
             <img 
-              src="https://res.cloudinary.com/dhxriuzu5/image/upload/v1756086245/BIB-icon_x02otm.png" 
-              alt="Bitcoin Is BAE Logo"
-              className="header-logo"
+              src={currentLogo}
+              alt={logoAlt}
+              className="header-logo clickable-logo"
+              onClick={toggleLogo}
+              title="Click to toggle logo"
             />
-            <h1>Bitcoin Is BAE</h1>
+            {showText && <h1>Bitcoin Is BAE</h1>}
           </div>
           <nav className="header-nav">
             <span className="nav-item active">Training Hub</span>
@@ -61,7 +85,12 @@ const NetflixStyleHome = ({ modules, onModuleSelect }) => {
           </nav>
           <div className="header-actions">
             <div className="motivation-banner">
-              <span>🚀 Your crypto journey starts here!</span>
+              <span>
+                {currentSection === 'crypto' 
+                  ? '🚀 Your crypto journey starts here!' 
+                  : '📚 Your personal development journey starts here!'
+                }
+              </span>
             </div>
           </div>
         </div>
@@ -72,6 +101,32 @@ const NetflixStyleHome = ({ modules, onModuleSelect }) => {
         {/* Left Sidebar */}
         <aside className="sidebar">
           <div className="sidebar-section">
+            <h3 className="sidebar-title">Training Sections</h3>
+            <div className="sidebar-nav">
+              <div 
+                className={`nav-item ${currentSection === 'crypto' ? 'active' : ''}`}
+                onClick={() => onSectionChange('crypto')}
+              >
+                <span className="nav-icon">
+                  <img 
+                    src="https://res.cloudinary.com/dhxriuzu5/image/upload/v1756086245/BIB-icon_x02otm.png" 
+                    alt="BIB Logo"
+                    className="nav-icon-image"
+                  />
+                </span>
+                <span>Crypto Training</span>
+              </div>
+              <div 
+                className={`nav-item ${currentSection === 'booknotic' ? 'active' : ''}`}
+                onClick={() => onSectionChange('booknotic')}
+              >
+                <span className="nav-icon">📖</span>
+                <span>Booknotic</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="sidebar-section">
             <h3 className="sidebar-title">Training Categories</h3>
             <div className="sidebar-nav">
               <div 
@@ -81,34 +136,43 @@ const NetflixStyleHome = ({ modules, onModuleSelect }) => {
                 <span className="nav-icon">📚</span>
                 <span>All Modules</span>
               </div>
-              <div 
-                className={`nav-item ${activeCategory === 'risk' ? 'active' : ''}`}
-                onClick={() => handleCategoryClick('risk')}
-              >
-                <span className="nav-icon">🎯</span>
-                <span>Risk Management</span>
-              </div>
-              <div 
-                className={`nav-item ${activeCategory === 'technical' ? 'active' : ''}`}
-                onClick={() => handleCategoryClick('technical')}
-              >
-                <span className="nav-icon">📊</span>
-                <span>Technical Analysis</span>
-              </div>
-              <div 
-                className={`nav-item ${activeCategory === 'strategy' ? 'active' : ''}`}
-                onClick={() => handleCategoryClick('strategy')}
-              >
-                <span className="nav-icon">💡</span>
-                <span>Strategy</span>
-              </div>
+              {currentSection === 'crypto' && (
+                <>
+                  <div 
+                    className={`nav-item ${activeCategory === 'risk' ? 'active' : ''}`}
+                    onClick={() => handleCategoryClick('risk')}
+                  >
+                    <span className="nav-icon">🎯</span>
+                    <span>Risk Management</span>
+                  </div>
+                  <div 
+                    className={`nav-item ${activeCategory === 'technical' ? 'active' : ''}`}
+                    onClick={() => handleCategoryClick('technical')}
+                  >
+                    <span className="nav-icon">📊</span>
+                    <span>Technical Analysis</span>
+                  </div>
+                  <div 
+                    className={`nav-item ${activeCategory === 'strategy' ? 'active' : ''}`}
+                    onClick={() => handleCategoryClick('strategy')}
+                  >
+                    <span className="nav-icon">💡</span>
+                    <span>Strategy</span>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
           <div className="motivation-card">
             <div className="motivation-icon">⭐</div>
             <h4>This is Your Time!</h4>
-            <p>With knowledge comes confidence. With action comes results. Start your crypto journey today.</p>
+            <p>
+              {currentSection === 'crypto' 
+                ? 'With knowledge comes confidence. With action comes results. Start your crypto journey today.'
+                : 'With wisdom comes transformation. With practice comes mastery. Start your personal development journey today.'
+              }
+            </p>
             <button className="motivation-btn">Start Learning</button>
           </div>
         </aside>
@@ -118,9 +182,14 @@ const NetflixStyleHome = ({ modules, onModuleSelect }) => {
           {/* Hero Section */}
           <section className="hero-section">
             <div className="hero-content">
-              <h2 className="hero-title">Master Crypto Trading</h2>
+              <h2 className="hero-title">
+                {currentSection === 'crypto' ? 'Master Crypto Trading' : 'Master Personal Development'}
+              </h2>
               <p className="hero-subtitle">
-                Comprehensive training modules designed for busy mums who want to learn crypto trading safely and confidently
+                {currentSection === 'crypto' 
+                  ? 'Comprehensive training modules designed for busy mums who want to learn crypto trading safely and confidently'
+                  : 'Transform your mindset and build wealth through proven principles from the world\'s most successful people'
+                }
               </p>
             </div>
           </section>

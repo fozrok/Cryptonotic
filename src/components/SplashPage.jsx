@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import { useLogoContext } from '../context/LogoContext'
 import './SplashPage.css'
 
 const SplashPage = ({ onContinue }) => {
   const [isVisible, setIsVisible] = useState(false)
+  const { currentLogo, logoAlt, showText, isZionixMode, colorScheme, toggleLogo } = useLogoContext()
   const [showSubtitle, setShowSubtitle] = useState(false)
   const [showTagline, setShowTagline] = useState(false)
   const [showButton, setShowButton] = useState(false)
@@ -16,7 +18,15 @@ const SplashPage = ({ onContinue }) => {
   }, [])
 
   return (
-    <div className="splash-page">
+    <div 
+      className="splash-page"
+      style={{
+        '--primary-color': colorScheme.primary,
+        '--secondary-color': colorScheme.secondary,
+        '--gradient': colorScheme.gradient,
+        '--text-gradient': colorScheme.textGradient
+      }}
+    >
       <div className="splash-background">
         <div className="gradient-overlay"></div>
         <div className="floating-particles">
@@ -31,15 +41,17 @@ const SplashPage = ({ onContinue }) => {
       </div>
 
       <div className="splash-content">
-        <div className={`logo-container ${isVisible ? 'visible' : ''}`}>
+        <div className={`logo-container ${isVisible ? 'visible' : ''} ${isZionixMode ? 'zionix-mode' : ''}`}>
           <div className="logo-icon">
             <img 
-              src="https://res.cloudinary.com/dhxriuzu5/image/upload/v1756086245/BIB-icon_x02otm.png" 
-              alt="Bitcoin Is BAE Logo"
-              className="bib-logo"
+              src={currentLogo}
+              alt={logoAlt}
+              className="bib-logo clickable-logo"
+              onClick={toggleLogo}
+              title="Click to toggle logo"
             />
           </div>
-          <h1 className="main-title">Bitcoin Is BAE</h1>
+          {showText && <h1 className="main-title">Bitcoin Is BAE</h1>}
         </div>
 
         <div className={`subtitle ${showSubtitle ? 'visible' : ''}`}>
