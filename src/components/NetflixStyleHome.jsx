@@ -79,9 +79,26 @@ const NetflixStyleHome = ({ modules, onModuleSelect, currentSection, onSectionCh
             {showText && <h1>Bitcoin Is BAE</h1>}
           </div>
           <nav className="header-nav">
-            <span className="nav-item active">Training Hub</span>
-            <span className="nav-item">Progress</span>
-            <span className="nav-item">Resources</span>
+            <div 
+              className={`nav-item ${currentSection === 'crypto' ? 'active' : ''}`}
+              onClick={() => onSectionChange('crypto')}
+            >
+              <span className="nav-icon">
+                <img 
+                  src="https://res.cloudinary.com/dhxriuzu5/image/upload/v1756086245/BIB-icon_x02otm.png" 
+                  alt="BIB Logo"
+                  className="nav-icon-image"
+                />
+              </span>
+              <span>Crypto Training</span>
+            </div>
+            <div 
+              className={`nav-item ${currentSection === 'booknotic' ? 'active' : ''}`}
+              onClick={() => onSectionChange('booknotic')}
+            >
+              <span className="nav-icon">📖</span>
+              <span>Booknotic</span>
+            </div>
           </nav>
           <div className="header-actions">
             <div className="motivation-banner">
@@ -100,32 +117,6 @@ const NetflixStyleHome = ({ modules, onModuleSelect, currentSection, onSectionCh
       <div className="main-layout">
         {/* Left Sidebar */}
         <aside className="sidebar">
-          <div className="sidebar-section">
-            <h3 className="sidebar-title">Training Sections</h3>
-            <div className="sidebar-nav">
-              <div 
-                className={`nav-item ${currentSection === 'crypto' ? 'active' : ''}`}
-                onClick={() => onSectionChange('crypto')}
-              >
-                <span className="nav-icon">
-                  <img 
-                    src="https://res.cloudinary.com/dhxriuzu5/image/upload/v1756086245/BIB-icon_x02otm.png" 
-                    alt="BIB Logo"
-                    className="nav-icon-image"
-                  />
-                </span>
-                <span>Crypto Training</span>
-              </div>
-              <div 
-                className={`nav-item ${currentSection === 'booknotic' ? 'active' : ''}`}
-                onClick={() => onSectionChange('booknotic')}
-              >
-                <span className="nav-icon">📖</span>
-                <span>Booknotic</span>
-              </div>
-            </div>
-          </div>
-
           <div className="sidebar-section">
             <h3 className="sidebar-title">Training Categories</h3>
             <div className="sidebar-nav">

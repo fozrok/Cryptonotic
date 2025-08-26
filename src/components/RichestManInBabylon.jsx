@@ -34,10 +34,6 @@ const RichestManInBabylon = () => {
                 <li>Developing a systematic approach to wealth building</li>
               </ul>
 
-              <div className="content-image">
-                <img src="https://res.cloudinary.com/dhxriuzu5/image/upload/v1756086245/BIB-icon_x02otm.png" alt="Richest Man in Babylon Overview" />
-                <p className="image-caption">Richest Man in Babylon Overview</p>
-              </div>
             </>
           )
         }
@@ -368,7 +364,7 @@ const RichestManInBabylon = () => {
                 <iframe 
                   width="100%" 
                   height="315" 
-                  src="https://www.youtube.com/embed/TJDcGv9OH4Q" 
+                  src="https://www.youtube.com/embed/khSgV22HPgA?si=iQeu8yxHWb3WYuNp" 
                   title="The Richest Man in Babylon - Complete Book Overview"
                   frameBorder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -376,8 +372,8 @@ const RichestManInBabylon = () => {
                 ></iframe>
                 <p className="video-caption">The Richest Man in Babylon - Complete Book Overview</p>
               </div>
-              <div className="content-image" onClick={() => openImageModal("https://res.cloudinary.com/dhxriuzu5/image/upload/v1756163374/Booknotic_audiogram-bg_TheRichestManInBabylon_caoh22.png", "The Richest Man in Babylon - Complete Book Overview")}>
-                <img src="https://res.cloudinary.com/dhxriuzu5/image/upload/v1756163374/Booknotic_audiogram-bg_TheRichestManInBabylon_caoh22.png" alt="The Richest Man in Babylon - Complete Book Overview" />
+              <div className="content-image" onClick={() => openImageModal("https://res.cloudinary.com/dhxriuzu5/image/upload/v1756162472/VisualSummary_The_Richest_Man_In_Babylon_xnsczd.jpg", "The Richest Man in Babylon - Complete Book Overview")}>
+                <img src="https://res.cloudinary.com/dhxriuzu5/image/upload/v1756162472/VisualSummary_The_Richest_Man_In_Babylon_xnsczd.jpg" alt="The Richest Man in Babylon - Complete Book Overview" />
                 <p className="image-caption">The Richest Man in Babylon - Complete Book Overview</p>
               </div>
             </div>

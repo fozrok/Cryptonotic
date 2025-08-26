@@ -84,24 +84,33 @@
 
 .header-nav {
   display: flex;
-  gap: 30px;
+  gap: 20px;
+  align-items: center;
 }
 
-.nav-item {
+.header-nav .nav-item {
   cursor: pointer;
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 10px 20px;
+  border-radius: 25px;
   transition: all 0.3s ease;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.nav-item:hover {
+.header-nav .nav-item:hover {
   background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
-.nav-item.active {
+.header-nav .nav-item.active {
   background: var(--gradient, linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57));
   color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .header-actions {
@@ -190,6 +199,20 @@
   height: 20px;
   object-fit: contain;
   border-radius: 4px;
+}
+
+/* Header nav icon styles */
+.header-nav .nav-icon {
+  font-size: 1.1rem;
+  width: 20px;
+  height: 20px;
+}
+
+.header-nav .nav-icon-image {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  border-radius: 3px;
 }
 
 .motivation-card {
@@ -624,14 +647,25 @@
     gap: 30px;
     padding: 100px 30px 40px;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
   }
   
-  .sidebar, .right-sidebar {
-    order: 2;
+  .sidebar {
+    order: 1;
+    display: block !important;
+    width: 100%;
+    margin-bottom: 30px;
   }
   
   .main-content {
-    order: 1;
+    order: 2;
+    width: 100%;
+  }
+  
+  .right-sidebar {
+    order: 3;
+    width: 100%;
   }
   
   .featured-grid {
@@ -650,7 +684,27 @@
   }
   
   .header-nav {
-    gap: 15px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .header-nav .nav-item {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    min-width: 120px;
+    justify-content: center;
+  }
+  
+  .header-nav .nav-icon {
+    font-size: 1rem;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .header-nav .nav-icon-image {
+    width: 16px;
+    height: 16px;
   }
   
   .motivation-banner {
@@ -689,6 +743,54 @@
   .header-content {
     padding: 0 20px;
   }
+  
+  /* Mobile sidebar improvements */
+  .sidebar {
+    margin-bottom: 20px;
+    display: block !important;
+    width: 100%;
+    order: 1;
+  }
+  
+  .sidebar-section {
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .sidebar-nav .nav-item {
+    padding: 15px 20px;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .sidebar-nav .nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .sidebar-nav .nav-item.active {
+    background: var(--gradient, linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57));
+    border-color: transparent;
+  }
+  
+  .nav-icon {
+    font-size: 1.4rem;
+    width: 28px;
+    height: 28px;
+  }
+  
+  .nav-icon-image {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .sidebar-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color, #feca57);
+  }
 }
 
 @media (max-width: 480px) {
@@ -705,6 +807,85 @@
   }
   
   .progress-card {
+    padding: 20px;
+  }
+  
+  /* Extra small screen header nav */
+  .header-nav {
+    gap: 8px;
+  }
+  
+  .header-nav .nav-item {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    min-width: 100px;
+  }
+  
+  .header-nav .nav-icon {
+    font-size: 0.9rem;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .header-nav .nav-icon-image {
+    width: 14px;
+    height: 14px;
+  }
+  
+  /* Extra small screen sidebar improvements */
+  .sidebar {
+    display: block !important;
+    width: 100%;
+    order: 1;
+    margin-bottom: 25px;
+  }
+  
+  .sidebar-section {
+    padding: 15px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  .sidebar-nav .nav-item {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .sidebar-nav .nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .sidebar-nav .nav-item.active {
+    background: var(--gradient, linear-gradient(45deg, #bf1b69, #ff6b6b, #feca57));
+    border-color: transparent;
+  }
+  
+  .nav-icon {
+    font-size: 1.2rem;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .nav-icon-image {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .sidebar-title {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--primary-color, #feca57);
+    font-weight: 600;
+  }
+  
+  .motivation-card {
+    margin-top: 20px;
     padding: 20px;
   }
 }

@@ -290,16 +290,16 @@ const PsychologyOfMoney = () => {
                 <iframe 
                   width="100%" 
                   height="315" 
-                  src="https://www.youtube.com/embed/TJDcGv9OH4Q" 
-                  title="The Psychology of Money - Complete Book Overview"
+                  src="https://www.youtube.com/embed/zYZ0S0zdheE" 
+                  title="The Psychology of Money - Booknotic Super Learning Experience"
                   frameBorder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowFullScreen
                 ></iframe>
                 <p className="video-caption">The Psychology of Money - Complete Book Overview</p>
               </div>
-              <div className="content-image" onClick={() => openImageModal("https://res.cloudinary.com/dhxriuzu5/image/upload/v1756163370/Booknotic_audiogram-bg_PsychologyOfMoney_lcgktl.jpg", "The Psychology of Money - Complete Book Overview")}>
-                <img src="https://res.cloudinary.com/dhxriuzu5/image/upload/v1756163370/Booknotic_audiogram-bg_PsychologyOfMoney_lcgktl.jpg" alt="The Psychology of Money - Complete Book Overview" />
+              <div className="content-image" onClick={() => openImageModal("https://res.cloudinary.com/dhxriuzu5/image/upload/v1756162472/VisualSummary_The_Psychology_of_Money_x1gfcx.jpg", "The Psychology of Money - Complete Book Overview")}>
+                <img src="https://res.cloudinary.com/dhxriuzu5/image/upload/v1756162472/VisualSummary_The_Psychology_of_Money_x1gfcx.jpg" alt="The Psychology of Money - Complete Book Overview" />
                 <p className="image-caption">The Psychology of Money - Complete Book Overview</p>
               </div>
             </div>

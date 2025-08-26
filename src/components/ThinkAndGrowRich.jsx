@@ -377,8 +377,8 @@ const ThinkAndGrowRich = () => {
                 ></iframe>
                 <p className="video-caption">Think & Grow Rich - Complete Book Overview</p>
               </div>
-              <div className="content-image" onClick={() => openImageModal("https://res.cloudinary.com/dhxriuzu5/image/upload/v1756163369/Booknotic_audiogram-bg_think-gorw-rich_beqb2s.jpg", "Think & Grow Rich - Complete Book Overview")}>
-                <img src="https://res.cloudinary.com/dhxriuzu5/image/upload/v1756163369/Booknotic_audiogram-bg_think-gorw-rich_beqb2s.jpg" alt="Think & Grow Rich - Complete Book Overview" />
+              <div className="content-image" onClick={() => openImageModal("https://res.cloudinary.com/dhxriuzu5/image/upload/v1756162471/Think_Grow_RichV2_iup63o.jpg", "Think & Grow Rich - Complete Book Overview")}>
+                <img src="https://res.cloudinary.com/dhxriuzu5/image/upload/v1756162471/Think_Grow_RichV2_iup63o.jpg" alt="Think & Grow Rich - Complete Book Overview" />
                 <p className="image-caption">Think & Grow Rich - Complete Book Overview</p>
               </div>
             </div>
