@@ -57,8 +57,8 @@ export const booknoticModules = [
     name: 'The Psychology of Money',
     component: PsychologyOfMoney,
     description: 'Understanding the psychology behind financial decisions',
-    duration: '60 min',
-    difficulty: 'Beginner',
+    duration: '20 min',
+    topic: 'wealth mindset',
     image: IMAGES.PSYCHOLOGY_OF_MONEY,
     category: 'Booknotic'
   },
@@ -67,8 +67,8 @@ export const booknoticModules = [
     name: 'Think & Grow Rich',
     component: ThinkAndGrowRich,
     description: 'Master the principles of success and wealth creation',
-    duration: '80 min',
-    difficulty: 'Beginner',
+    duration: '20 min',
+    topic: 'wealth mindset',
     image: IMAGES.THINK_AND_GROW_RICH,
     category: 'Booknotic'
   },
@@ -77,8 +77,8 @@ export const booknoticModules = [
     name: 'The Richest Man in Babylon',
     component: RichestManInBabylon,
     description: 'Learn timeless wealth-building principles',
-    duration: '75 min',
-    difficulty: 'Beginner',
+    duration: '20 min',
+    topic: 'wealth mindset',
     image: IMAGES.RICHEST_MAN_BABYLON,
     category: 'Booknotic'
   },
@@ -87,8 +87,8 @@ export const booknoticModules = [
     name: 'The Secret',
     component: TheSecret,
     description: 'Master the Law of Attraction to manifest your desires',
-    duration: '85 min',
-    difficulty: 'Beginner',
+    duration: '20 min',
+    topic: 'wealth mindset',
     image: IMAGES.THE_SECRET,
     category: 'Booknotic'
   }

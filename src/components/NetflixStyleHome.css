@@ -126,6 +126,20 @@
   font-weight: 500;
 }
 
+.motivation-link {
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.motivation-link:hover {
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 /* Main Layout */
 .main-layout {
   display: grid;
@@ -268,16 +282,16 @@
 /* Hero Section */
 .hero-section {
   text-align: center;
-  padding: 25px 0;
+  padding: 15px 0;
   background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   background: var(--text-gradient, linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -285,9 +299,9 @@
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   opacity: 0.9;
-  line-height: 1.5;
+  line-height: 1.4;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -440,6 +454,12 @@
 .difficulty.intermediate {
   background: rgba(255, 152, 0, 0.2);
   color: #ff9800;
+}
+
+.difficulty.wealth-mindset,
+.difficulty.wealth.mindset {
+  background: rgba(156, 39, 176, 0.2);
+  color: #9c27b0;
 }
 
 /* Modules Grid */
@@ -712,12 +732,16 @@
     padding: 6px 12px;
   }
   
+  .motivation-link {
+    font-size: 0.8rem;
+  }
+  
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   
   .section-title {
@@ -795,7 +819,7 @@
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
   
   .featured-card, .module-card {

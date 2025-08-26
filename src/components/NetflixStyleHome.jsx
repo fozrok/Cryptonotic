@@ -102,12 +102,14 @@ const NetflixStyleHome = ({ modules, onModuleSelect, currentSection, onSectionCh
           </nav>
           <div className="header-actions">
             <div className="motivation-banner">
-              <span>
-                {currentSection === 'crypto' 
-                  ? '🚀 Your crypto journey starts here!' 
-                  : '📚 Your personal development journey starts here!'
-                }
-              </span>
+              <a 
+                href="https://zionixglobal.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="motivation-link"
+              >
+                <span>SPECIAL OFFER: Join Zionix Global now</span>
+              </a>
             </div>
           </div>
         </div>
@@ -174,7 +176,7 @@ const NetflixStyleHome = ({ modules, onModuleSelect, currentSection, onSectionCh
           <section className="hero-section">
             <div className="hero-content">
               <h2 className="hero-title">
-                {currentSection === 'crypto' ? 'Master Crypto Trading' : 'Master Personal Development'}
+                {currentSection === 'crypto' ? 'Wealth' : 'Wisdom'}
               </h2>
               <p className="hero-subtitle">
                 {currentSection === 'crypto' 
@@ -221,8 +223,8 @@ const NetflixStyleHome = ({ modules, onModuleSelect, currentSection, onSectionCh
                     <p className="card-description">{module.description}</p>
                     <div className="card-meta">
                       <span className="duration">{module.duration}</span>
-                      <span className={`difficulty ${module.difficulty.toLowerCase()}`}>
-                        {module.difficulty}
+                      <span className={`difficulty ${(module.difficulty || module.topic || 'beginner').toLowerCase()}`}>
+                        {module.difficulty || module.topic || 'Beginner'}
                       </span>
                     </div>
                   </div>
@@ -271,8 +273,8 @@ const NetflixStyleHome = ({ modules, onModuleSelect, currentSection, onSectionCh
                     <p className="card-description">{module.description}</p>
                     <div className="card-meta">
                       <span className="duration">{module.duration}</span>
-                      <span className={`difficulty ${module.difficulty.toLowerCase()}`}>
-                        {module.difficulty}
+                      <span className={`difficulty ${(module.difficulty || module.topic || 'beginner').toLowerCase().replace(/\s+/g, '-')}`}>
+                        {module.difficulty || module.topic || 'Beginner'}
                       </span>
                     </div>
                   </div>
@@ -364,7 +366,7 @@ const NetflixStyleHome = ({ modules, onModuleSelect, currentSection, onSectionCh
       {/* Footer */}
       <footer className="netflix-footer">
         <div className="footer-content">
-          <p>&copy; 2024 Bitcoin Is BAE. Empowering busy mums to learn crypto trading safely and confidently.</p>
+          <p>&copy; 2024 Zionix Global. Empowering busy mums to learn crypto trading safely and confidently.</p>
         </div>
       </footer>
     </div>
